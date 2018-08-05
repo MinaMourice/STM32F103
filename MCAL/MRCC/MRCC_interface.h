@@ -23,7 +23,7 @@
 void MRCC_InitializeClock(void);
 
 
-/*  */
-void MRCC_EnablClock(u8 Bus, u8 Peripheral);
+/* Enable Clock */
+void MRCC_EnableClock(u8 Bus, u8 Peripheral);
 
 #endif

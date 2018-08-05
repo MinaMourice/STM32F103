@@ -12,14 +12,14 @@
 void MRCC_InitializeClock(void)
 {
 	/*HSE On*/
-	MRCC->CR		|=(1<<4);
+	MRCC->CR	=0x00010000;
 	
 	/*Select HSE as system clock*/
-	MRCC->CFGR	|=1;
+	MRCC->CFGR	=0x00000001;
 }
 
 
-void MRCC_EnablClock(u8 Bus, u8 Peripheral)
+void MRCC_EnableClock(u8 Bus, u8 Peripheral)
 {
 	switch(Bus)
 	{
