@@ -23,10 +23,14 @@ void Scheduler (void)
 	{
 		if(SysTasks[i].State==Active)
 		{
-			if(	(TickCount % SysTasks[i].Periodicity) ==0)
-				{
+			if(SysTasks[i].FirstDelay==0)
+			{
 					SysTasks[i].Taskhandler();
-				}
+			}
+			else
+			{
+				SysTasks[i].FirstDelay--;
+			}
 		}
 	}
 }
